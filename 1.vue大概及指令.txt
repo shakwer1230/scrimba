@@ -1,0 +1,48 @@
+ 1. 设置淘宝镜像
+   npm install cnpm -g --registry=https://registry.npm.taobao.org
+ 
+ 2. npm install 报错  Unexpected end of JSON input while parsing near '...gz"}},"1.1.6":{"name"'
+   一般建议 清除缓存
+   npm cach clean --force
+   
+ 3.脚手架创建项目
+   检查脚手架vue-cli是否安装成功 vue -V
+   vue init webpack 项目名
+   
+   
+ 4.大小写敏感
+    var app =new Vue({}) //正确
+	var app =new vue({}) //错误 
+
+ 5. v-if 条件
+ 
+ 6. v-for 循环
+ 
+ 7. v-click 点击事件
+	
+ 8. v-model 表单和应用状态间双向绑定数据
+  
+ 9. component 插件  
+   组件解耦 便于管理；组件可以方便复用
+   v-bind 传值给模板组件  props['参数'] 模板组件接受参数 （模板接收父作用域（引用模板的地方）传来的参数）
+    模板定义
+	Vue.component('todo-item',{
+	 template:'<li>this is a template</li>'
+	})
+	模板接收参数
+	Vue.component('todo-item',{
+       props:['todo'],
+       template:'<li key="{{todo.id}}">{{todo.text}}</li>'
+    })
+	
+	<todo-item v-for="item in groceryList" v-bind:todo="item" v-bind:keys="item.id">
+    </todo-item>
+
+   (1) component 并不是支持所有浏览器原生实现，safari 10.1+，chrome 54+, firefox 63+, ie 9+ 
+ 
+ 10. v-bind 指令 绑定dom 属性
+
+ 11. v-on 为事件添加监听
+ 
+ 
+	
