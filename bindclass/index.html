@@ -1,0 +1,20 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    
+</head>
+<body>
+    <div id="app">
+        <!--isAcitve 的值true与false 决定 是否有class=active 对象-->
+       <div v-bind:class="{active:isActive}"></div>
+       <!--与普通的class兼容-->
+       <!-- <div class="static active"></div> -->
+       <div class="static" v-bind:class="{active:isActive,'text-danger':hasError}"></div>
+       <div v-bind:class="classObject"></div>
+    </div>
+</body>
+
+</html>
+<script src="index.js"></script>

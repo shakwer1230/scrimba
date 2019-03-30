@@ -1,0 +1,25 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+</head>
+
+<body>
+    <div id="app">
+        {{number+1}}
+        <p>{{ok ?'Yes':'No'}}</p>
+        <p>{{message.split('').reverse().join('')}}</p>
+        <div v-bind:id="'list-'+id">this is a div</div>
+        <!-- 这是语句，不是表达式  所以会解析错误-->
+        <!-- {{ var a = 1 }} -->
+        <!-- 流控制也不会生效，请使用三元表达式 -->
+        <!-- {{ if (ok) { return message } }} -->
+        {{ok? message:'experession' }}
+
+    </div>
+</body>
+
+</html>
+<script src="index.js"></script>

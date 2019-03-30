@@ -1,0 +1,21 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+</head>
+
+<body>
+    <div id="app">
+        <p v-once>{{message}}</p>
+        <!-- 这会触发一个编译警告 -->
+        <!-- <a v-bind:['foo' + bar]="value"> ... </a> -->
+
+        <!-- 在 DOM 中使用模板时这段代码会被转换为 `v-bind:[someattr]` -->
+        <a v-bind:[someAttr]="value"> ... </a>
+    </div>
+</body>
+
+</html>
+<script src="index.js"></script>

@@ -1,0 +1,52 @@
+1.绑定html class  
+  对象语法
+    v-bind:class 动态切换class
+    v-bind:class 也可以普通的class共存
+    绑定的数据对象不必内联定义在模板里
+        <div v-bind:class="classObject"></div>
+        data: {
+            classObject: {
+                active: true,
+                'text-danger': false
+            }
+        }
+        渲染后的结果
+        <div v-bind:class="classObject"></div>
+
+  数组语法
+    绑定一个class列表
+    v-bind:class="[activeClass,errorClass]"
+  
+  用在组件上
+    Vue.component({
+      'my-component':{
+        template:'<p class="foo bar"></p>'
+      }
+    })
+
+    <my-component class="baz boo"></my-component>
+
+2.绑定内联样式 
+    v-bind:style  可以简化 自动省略前缀 :style
+    对象语法
+    var app=new Vue({
+        el:'#app',
+        data:{
+            activeColor:'red',
+            fontSize:30
+        }
+   })
+   <div v-bind:style="{ color: activeColor, fontSize: fontSize + 'px' }"></div>
+
+   <div v-bind:style="styleObject"></div>
+   data: {
+        styleObject: {
+            color: 'red',
+            fontSize: '13px'
+        }
+    }
+
+
+   数组语法
+   v-bind:style 的数组语法可以将多个样式对象应用到同一个元素上：
+   <div v-bind:style="[baseStyles, overridingStyles]"></div>
