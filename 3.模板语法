@@ -1,0 +1,12 @@
+1.插值
+  常见的Mustaches语法 双大括号 {{message}} 将数据解释为普通的文本  绑定的数据对象和插入值的地方保持同步，但v-once可阻止同步 只展示一次 
+  <p v-once>{{message}}</p>
+
+  v-html指令输出原始html
+
+  v-bind绑定属性 
+    <div v-bind:id="dynamicId"></div>
+    <button v-bind:disabled="isButtonDisabled">button</button> isButtonDisabled 为null undefined false 则button不会有disabled属性
+
+   使用javascript表达式
+     

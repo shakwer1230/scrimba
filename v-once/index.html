@@ -7,12 +7,7 @@
 </head>
 <body>
     <div id="app">
-       <span v-bind:title="message">
-            鼠标悬停几秒钟查看此处动态绑定的提示信息！
-       </span>
-
-       <button v-bind:disabled="isButtonDisabled">Button</button>
-     
+        <p v-once>{{message}}</p>
     </div>
 </body>
 
