@@ -1,0 +1,22 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="index.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+</head>
+
+<body>
+    <div id="app">
+        <ul>
+            <template v-for="item in items">
+                <li>{{ item.msg }}</li>
+                <li v-bind:class="divider" v-bind:role="presentation"></li>
+            </template>
+        </ul>
+    </div>
+</body>
+
+</html>
+<script src="index.js"></script>

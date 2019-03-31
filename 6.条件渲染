@@ -63,3 +63,50 @@ v-show:
     相比之下，v-show 就简单得多——不管初始条件是什么，元素总是会被渲染，并且只是简单地基于 CSS 进行切换。
 
     一般来说，v-if 有更高的切换开销，而 v-show 有更高的初始渲染开销。因此，如果需要非常频繁地切换，则使用 v-show 较好；如果在运行时条件很少改变，则使用 v-if 较好。
+
+v-for
+   v-for 指令根据一组数组的选项列表进行渲染。v-for 指令需要使用 item in items 形式的特殊语法
+   也可以用 of 替代 in 作为分隔符，因为它是最接近 JavaScript 迭代器的语法
+   <div v-for="item of items"></div>
+
+数组操作
+  变异方法：
+    push()
+    pop()
+    shift()
+    unshift()
+    splice()
+    sort()
+    reverse()
+  修改数组某项值 两个方法
+    var vm = new Vue({
+        data: {
+            items: ['a', 'b', 'c']
+        }
+    })
+   Vue.set(vm.items,index,'newValue')
+   vm.$set(vm.items, indexOfItem, newValue)
+   vm.$set方法 是 Vue.set方法别名
+
+   修改数组长度
+    vm.items.splice(newLength)
+
+对象操作
+  可以使用 Vue.set(object, key, value) 方法向嵌套对象添加响应式属性
+  var vm = new Vue({
+    data: {
+        userProfile: {
+            name: 'Anika'
+        }
+    }
+  })
+  动态添加年龄属性
+    Vue.set(vm.userProfile, 'age', 27)
+  动态添加多个属性
+    Object.assign(app.userProfile,{
+        sex: 'm',
+        country: 'china'
+    })
+
+过滤/排序
+    filter(val){} 过滤函数

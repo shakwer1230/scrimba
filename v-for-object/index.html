@@ -1,0 +1,31 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    
+</head>
+<body>
+    <div id="app">
+       <ul id=v-for-object class="demo">
+           <li v-for="value in object">
+               {{value}}
+           </li>
+       </ul>
+
+       <div v-for="(value,key) in object">
+           {{key}} : {{value}}
+        </div> 
+
+        <div v-for="(value,key,index) in object">
+            {{index}} : {{key}} : {{value}}
+        </div>
+     
+        <div v-for="(value,key) in object " :key="object.key">
+            {{value}}
+        </div>
+    </div>
+</body>
+
+</html>
+<script src="index.js"></script>
