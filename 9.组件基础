@@ -19,3 +19,14 @@
         ...
         v-on:enlarge-text="postFontSize += 0.1"
     ></blog-post>
+ 
+ 子组件用一个事件抛出一个特定的值，父组件监听这个事件的时候用，通过$event访问到这个被抛出的值
+  <div class="blog-post">
+        <h3>{{ post.title }}</h3>
+        <button v-on:click="$emit('enlarge-text',0.1)">
+          Enlarge text
+        </button>
+        <div v-html="post.content"></div>
+    </div>
+    使用组件时
+      <blog-post v-for="post in posts" v-bind:key="post.id" v-bind:post="post" v-on:enlarge-text="postFontSize += $event"></blog-post>

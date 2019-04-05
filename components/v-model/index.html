@@ -1,0 +1,19 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+</head>
+
+<body>
+    <div id="app">
+        <div>
+            <custom-input v-bind:value="searchText"  v-on:input="searchText = $event">
+            </custom-input>
+        </div>
+    </div>
+</body>
+
+</html>
+<script src="index.js"></script>
