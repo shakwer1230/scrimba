@@ -22,3 +22,58 @@
                 'component-b': ComponentB
             }
         })
+
+props 的大小寫
+   HTML 中的特性名是大小写不敏感的，所以浏览器会把所有大写字符解释为小写字符。
+   这意味着当你使用 DOM 中的模板时，camelCase (驼峰命名法) 的 prop 名需要使用其等价的 kebab-case (短横线分隔命名)
+   定義組件
+      Vue.component('blog-post', {
+        // 在 JavaScript 中是 camelCase 的
+        props: ['postTitle'],
+        template: '<h3>{{ postTitle }}</h3>'
+        })
+    使用時候
+    <!-- 在 HTML 中是 kebab-case 的 -->
+    <blog-post post-title="hello!"></blog-post>
+    假如使用的時候這樣
+    <blog-post postTitle="hello!"></blog-post>
+
+    瀏覽器解釋為 <blog-post posttitle="hello!"></blog-post> 無法識別 報錯
+
+    避免這樣的大小寫錯誤  需要定義props 為kebab-case (短横线分隔命名)
+
+prop 的单向数据流
+    1.这个 prop 用来传递一个初始值；这个子组件接下来希望将其作为一个本地的 prop 数据来使用。
+    在这种情况下，最好定义一个本地的 data 属性并将这个 prop 用作其初始值：
+    props: ['initialCounter'],
+    data: function () {
+        return {
+            counter: this.initialCounter
+        }
+    }
+
+    2.这个 prop 以一种原始的值传入且需要进行转换。在这种情况下，最好使用这个 prop 的值来定义一个计算属性：
+    props: ['size'],
+    computed: {
+        normalizedSize: function () {
+            return this.size.trim().toLowerCase()
+        }
+    }   
+
+prop 验证
+    type 可以是下列原生构造函数中的一个：
+    String
+    Number
+    Boolean
+    Array
+    Object
+    Date
+    Function
+    Symbol
+    额外的，type 还可以是一个自定义的构造函数，并且通过 instanceof 来进行检查确认
+
+插件不希望继承根元素的的继承特性，你可以在组件的的选项中设置为inheritAttrs: false
+    Vue.component('my-component', {
+        inheritAttrs: false,
+        // ...
+    })

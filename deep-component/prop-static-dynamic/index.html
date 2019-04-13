@@ -1,0 +1,19 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+</head>
+
+<body>
+    <div id="app">
+        <!--靜態傳值-->
+        <blog-post title="static title"></blog-post>
+        <!--動態傳值-->
+        <blog-post v-bind:title="post.title+' by '+ post.author"></blog-post>
+    </div>
+</body>
+
+</html>
+<script src="index.js"></script>
