@@ -17,7 +17,7 @@ var app=new Vue({
       posts: [{title:'this is a title ',content:'this is content'}],
       postFontSize: 1
     },
-    //第二种方式 使用方法参数接收模板参数 改变大小
+    //第二种方式 使用方法参数接收模板参数 改变大小 
     methods:{
       onEnlargeText:function(event){
         debugger

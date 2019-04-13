@@ -30,3 +30,23 @@
     </div>
     使用组件时
       <blog-post v-for="post in posts" v-bind:key="post.id" v-bind:post="post" v-on:enlarge-text="postFontSize += $event"></blog-post>
+
+
+
+插槽使用 定义在组件中 重组元素标签
+      <slot></slot>
+
+动态组件
+   v-bind:is
+   <!-- 组件会在 `currentTabComponent` 改变时改变 -->
+   <component v-bind:is="currentTabComponent"></component>
+   currentTabComponent 可以是组件名 或一个组件的选项对象
+
+解析dom  使用is的特性 
+   <table>
+     <blog-post-row></blog-post-row>
+   </table>
+   这个自定义组件 <blog-post-row> 会被作为无效的内容提升到外部，并导致最终渲染结果出错
+   <table>
+    <tr is="blog-post-row"></tr>
+   </table>

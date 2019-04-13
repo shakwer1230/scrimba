@@ -1,0 +1,24 @@
+定义组件名的方式有两种：
+    使用 kebab-case：Vue.component('my-component-name', { /* ... */ })
+    使用 PascalCase Vue.component('MyComponentName', { /* ... */ })
+
+全局注册
+    Vue.component('my-component-name', {
+        // ... 选项 ...
+    })
+    这些组件是全局注册的。也就是说它们在注册之后可以用在任何新创建的 Vue 根实例 (new Vue) 的模板中
+
+局部注册
+    全局注册往往是不够理想的。比如，如果你使用一个像 webpack 这样的构建系统，全局注册所有的组件意味着即便你已经不再使用一个组件了，它仍然会被包含在你最终的构建结果中。这造成了用户下载的 JavaScript 的无谓的增加
+    可以像定义一个js 对象来定义一个组件
+        var ComponentA = { /* ... */ }
+        var ComponentB = { /* ... */ }
+        var ComponentC = { /* ... */ }
+    然后再Vue中的components 中使用该组件
+        new Vue({
+            el: '#app',
+            components: {
+                'component-a': ComponentA,
+                'component-b': ComponentB
+            }
+        })
