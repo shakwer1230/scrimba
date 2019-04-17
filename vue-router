@@ -1,0 +1,5 @@
+路由的三个基本概念 route routes  router
+    1.route 它是一条路由
+    2.routes 是一组路由 把上面的route 组合起来 形成一个数组
+    3.router 是一个机制 相当于一个管理机制 管理路由
+    4.客户端中的路由 实际上是dom元素的隐藏和显示
