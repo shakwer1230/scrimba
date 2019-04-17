@@ -12,5 +12,5 @@
     instanceof可以在继承关系中用来判断一个实列是否属于他的父类型
 
 2.js的基本六大类型及三大引用类型
-    Number String Boolean Undefined Null  使用typeof 变量可以获取
+    Number String Boolean Undefined Null (数字 字符串 布尔 Undefined Null) 使用typeof 变量可以获取
     Object Array  Function 
