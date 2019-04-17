@@ -82,4 +82,4 @@ prop 验证
 
 
 
-使用v-model 传递  prop
+组件中使用v-model 绑定值 prop接收 
